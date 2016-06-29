@@ -1,6 +1,6 @@
 {
     "config": {
-        "cayley": {}
+        "cayley": "http://localhost:64210/"
     },
     "name": "flow_api",
     "module": "flow-api",
