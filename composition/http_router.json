@@ -1,5 +1,6 @@
 {
 	"config": {
+        "notDefined": "notDefined",
         "routes": ["notDefined", {
             "query": ["notDefined", {
                 "gremlin": "query_gremlin",
@@ -20,10 +21,11 @@
 	"flow": {
 		"notDefined": {
 			"d": [
-                ":http_server/send", {
+                [":http_server/send", {
                     "code": 404,
-                    "end": true
-                }
+                    "end": true,
+                    "send": "url"
+                }]
             ]
 		},
         "query_gremlin": {
