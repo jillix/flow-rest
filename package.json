@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "Flow data REST API",
   "dependencies": {
-    "cayley": "^0.2.1",
+    "flow-api": "github:jillix/flow-api",
     "flow-app": "github:jillix/flow-app",
-    "jsonld": "^0.4.11"
+    "flow-http": "github:jillix/flow-http"
   },
   "devDependencies": {},
   "scripts": {
