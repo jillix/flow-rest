@@ -1,0 +1,37 @@
+{
+	"config": {
+        "routes": ["notDefined", {
+            "query": ["notDefined", {
+                "gremlin": "query_gremlin",
+                "mql": "query_mql"
+            }],
+            "shape": ["notDefined", {
+                "gremlin": "shape_gremlin",
+                "mql": "shape_mql"
+            }],
+            "write": ["write_json_nquad", {
+                "file": ["notDefined", {
+                    "nquad": "write_file_nquad"
+                }]
+            }],
+            "delete": "delete"
+        }]
+    },
+	"flow": {
+		"notDefined": {
+			"d": [
+                ":http_server/send", {}
+            ]
+		},
+        "query_gremlin": {
+            "d": [
+                ":flow-api/gremlinQuery"
+            ]
+        }
+	},
+	"name": "http_router",
+	"module": "flow-router",
+	"roles": {
+		"*": true
+	}
+}

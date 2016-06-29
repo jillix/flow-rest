@@ -1,0 +1,13 @@
+{
+	"config": {},
+	"flow": {
+		"http_request": {
+			"d": [":http_router/route"]
+		}
+	},
+	"name": "http_server",
+	"module": "flow-http",
+	"roles": {
+		"*": true
+	}
+}
