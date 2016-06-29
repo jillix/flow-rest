@@ -20,12 +20,15 @@
 	"flow": {
 		"notDefined": {
 			"d": [
-                ":http_server/send", {}
+                ":http_server/send", {
+                    "code": 404,
+                    "end": true
+                }
             ]
 		},
         "query_gremlin": {
             "d": [
-                ":flow-api/gremlinQuery"
+                ":flow_api/gremlinQuery"
             ]
         }
 	},

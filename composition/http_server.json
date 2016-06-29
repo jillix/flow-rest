@@ -1,9 +1,22 @@
 {
 	"config": {},
 	"flow": {
-		"http_request": {
-			"d": [":http_router/route"]
-		}
+		"start": {
+            "d": [
+                [".start", {
+                    "port": 8080,
+                    "ssl": {
+                        "cert": "ssl/dev.crt",
+                        "key": "ssl/dev.key"
+                    }
+                }]
+            ]
+        },
+        "http_req": {
+            "d": [
+                ":http_router/route"
+            ]
+        }
 	},
 	"name": "http_server",
 	"module": "flow-http",
