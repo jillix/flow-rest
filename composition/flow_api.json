@@ -1,0 +1,10 @@
+{
+    "config": {
+        "cayley": {}
+    },
+    "name": "flow_api",
+    "module": "flow-api",
+    "roles": {
+        "*": true
+    }
+}
