@@ -5,7 +5,8 @@
   "dependencies": {
     "flow-api": "github:jillix/flow-api",
     "flow-app": "github:jillix/flow-app",
-    "flow-http": "github:jillix/flow-http"
+    "flow-http": "github:jillix/flow-http",
+    "flow-router": "github:jillix/flow-router"
   },
   "devDependencies": {},
   "scripts": {
