@@ -1,0 +1,30 @@
+{
+  "name": "flow-rest",
+  "version": "0.0.1",
+  "description": "Flow data REST API",
+  "dependencies": {
+    "cayley": "^0.2.1",
+    "flow-app": "github:jillix/flow-app",
+    "jsonld": "^0.4.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "flow-app . http_server/start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jillix/flow-rest.git"
+  },
+  "keywords": [
+    "flow",
+    "rest",
+    "api"
+  ],
+  "author": "Adrian Ottiker <adrian@ottiker.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jillix/flow-rest/issues"
+  },
+  "homepage": "https://github.com/jillix/flow-rest#readme"
+}
