@@ -30,7 +30,12 @@
 		},
         "query_gremlin": {
             "d": [
-                ":flow_api/gremlinQuery"
+                ":flow_api/query.gremlin",
+                [":http_server/send", {
+                    "code": 200,
+                    "end": true,
+                    "send": "result"
+                }]
             ]
         }
 	},
