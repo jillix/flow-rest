@@ -13,6 +13,7 @@
         },
         "http_req": {
             "d": [
+                ":flow_auth/session.get",
 				[":concat", {"to": "body"}],
                 ":http_router/route"
             ]
