@@ -15,10 +15,38 @@
                     "nquad": "write_file_nquad"
                 }]
             }],
-            "delete": "delete"
+            "delete": "delete",
+            "auth": "auth",
+            "token": ["notDefined", {
+                ":token": "token"
+            }]
         }]
     },
 	"flow": {
+        "auth": {
+            "d": [
+                ":flow_auth/token.create",
+                [":http_server/send", {
+                    "code": 200,
+                    "end": true,
+                    "send": "token"
+                }]
+            ]
+        },
+        "token": {
+            "d": [
+                [":flow_tools/transform", {
+                    "token": "{params.token}"
+                }], 
+                ":flow_auth/token.validate",
+                [":http_server/send", {
+                    "code": 200,
+                    "end": true,
+                    "send": "content"
+                }]
+            ],
+            "r": "http_server/http_auth_err"
+        },
 		"notDefined": {
 			"d": [
                 [":http_server/send", {
