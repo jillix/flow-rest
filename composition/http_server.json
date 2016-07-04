@@ -17,6 +17,15 @@
 				[":concat", {"to": "body"}],
                 ":http_router/route"
             ]
+        },
+        "http_auth_err": {
+            "d": [
+                [":send", {
+                    "code": 400,
+                    "end": true,
+                    "send": "message"
+                }]
+            ]
         }
 	},
 	"name": "http_server",
