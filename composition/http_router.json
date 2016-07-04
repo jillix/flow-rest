@@ -1,26 +1,29 @@
 {
 	"config": {
         "notDefined": "notDefined",
-        "routes": ["notDefined", {
-            "query": ["notDefined", {
-                "gremlin": "query_gremlin",
-                "mql": "query_mql"
-            }],
-            "shape": ["notDefined", {
-                "gremlin": "shape_gremlin",
-                "mql": "shape_mql"
-            }],
-            "write": ["write_json_nquad", {
-                "file": ["notDefined", {
-                    "nquad": "write_file_nquad"
+        "defaultRouter": "main",
+        "routers": {
+            "main": ["notDefined", {
+                "query": ["notDefined", {
+                    "gremlin": "query_gremlin",
+                    "mql": "query_mql"
+                }],
+                "shape": ["notDefined", {
+                    "gremlin": "shape_gremlin",
+                    "mql": "shape_mql"
+                }],
+                "write": ["write_json_nquad", {
+                    "file": ["notDefined", {
+                        "nquad": "write_file_nquad"
+                    }]
+                }],
+                "delete": "delete",
+                "auth": "auth",
+                "token": ["notDefined", {
+                    ":token": "token"
                 }]
-            }],
-            "delete": "delete",
-            "auth": "auth",
-            "token": ["notDefined", {
-                ":token": "token"
             }]
-        }]
+        }
     },
 	"flow": {
         "auth": {
@@ -31,7 +34,8 @@
                     "end": true,
                     "send": "token"
                 }]
-            ]
+            ],
+            "r": "http_server/http_auth_err"
         },
         "token": {
             "d": [
@@ -51,8 +55,7 @@
 			"d": [
                 [":http_server/send", {
                     "code": 404,
-                    "end": true,
-                    "send": "url"
+                    "end": true
                 }]
             ]
 		},
@@ -62,7 +65,7 @@
                 [":http_server/send", {
                     "code": 200,
                     "end": true,
-                    "send": "result"
+                    "send": "body"
                 }]
             ]
         }
