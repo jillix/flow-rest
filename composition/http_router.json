@@ -28,11 +28,13 @@
 	"flow": {
         "auth": {
             "d": [
+                [":flow_tools/transform", {
+                    "content": "USER_EMAIL"
+                }],
                 ":flow_auth/token.create",
                 [":http_server/send", {
                     "code": 200,
-                    "end": true,
-                    "send": "token"
+                    "end": true
                 }]
             ],
             "r": "http_server/http_auth_err"
