@@ -3,11 +3,7 @@
 		"start": {
             "d": [
                 [".start", {
-                    "port": 8080,
-                    "ssl": {
-                        "cert": "ssl/dev.crt",
-                        "key": "ssl/dev.key"
-                    }
+                    "port": 8080
                 }]
             ]
         },
